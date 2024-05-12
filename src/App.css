@@ -1,0 +1,80 @@
+.nav {
+  justify-content: space-around;
+  height: 80px;
+  background-color: brown;
+}
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  height: 80px;
+  position: relative;
+  max-width: 1200px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 34px;
+  height: 49px;
+}
+
+.menu > ul {
+  display: flex;
+  list-style: none;
+  flex: 1;
+}
+.menu ul li {
+  padding-left: 70px;
+}
+
+.carousel-items {
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  gap: 20px;
+  height: 250px;
+}
+.carousel-items img {
+  width: 200px;
+  border-radius: 20px;
+}
+.full {
+  margin-left: calc(10% + 36px);
+  margin-right: calc(10% + 36px);
+}
+.card-all{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  /* padding: 20px; */
+}
+.cards{
+  width: 250px;
+}
+.card{
+  width: 100%;
+  text-wrap: wrap;
+}
+.card img{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.card:hover{
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}
+.shim-card{
+  width: 100%;
+}
+.shim-cards{
+  width: 250px;
+  height: 250px;
+  background-color: rgb(226, 224, 224);
+  border-radius: 20px;
+}
+

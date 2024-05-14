@@ -11,7 +11,6 @@ function FetchList(api) {
             let data = await fetch(api)
             let json = await data.json()
             setList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-            console.log(json);
         } catch (error) {
             console.log(error.messa);
         }

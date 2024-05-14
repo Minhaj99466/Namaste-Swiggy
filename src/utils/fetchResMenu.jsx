@@ -4,6 +4,7 @@ import { MENU_API } from './constants'
 function FetchResMenu(resId) {
     const [resInfo, setResInfo] = useState(null)
     
+
     useEffect(() => {
         fetchMenu()
     }, [])

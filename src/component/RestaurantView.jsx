@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import FetchResMenu from '../utils/fetchResMenu'
 import DropdownShimmer from './DropdownShimmer'
 import { IoMdStar } from "react-icons/io";
+import CategoryCard from './CategoryCard';
 
 function RestaurantView() {
     const { resId } = useParams()
@@ -11,7 +12,7 @@ function RestaurantView() {
 
     const { name, cuisines, costForTwoMessage, sla, avgRating, totalRatingsString } = resInfo?.cards[2]?.card?.card?.info || {};
 
-    const { itemCards } =resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card || {};
+    const categories =resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) =>c.card?.card?.["@type"] ==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
 
     return resInfo === null ? (
         <DropdownShimmer />
@@ -42,7 +43,11 @@ function RestaurantView() {
                 </div>
             </div>
             <h2 className=" flex text-4xl font-serif font-bold items-center underline pl-2 m-5">Menu</h2>
-           
+            <div>
+                {categories.map((category,index)=>(
+                    <CategoryCard key={index} cardItems={category?.card?.card}/>
+                ))}
+            </div>
         </div>
     );
 };
